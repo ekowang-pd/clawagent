@@ -1,0 +1,1 @@
+import{asTrimmedNonEmptyString as asString}from"./utils/text.js";export const DEFAULT_USER_MESSAGE_PREFIX="User Message From Kimi:";export const resolveUserMessagePrefix=s=>asString(s)??"User Message From Kimi:";export const withUserMessagePrefix=(s,e)=>s.startsWith(e)?s:`${e}\n${s}`;

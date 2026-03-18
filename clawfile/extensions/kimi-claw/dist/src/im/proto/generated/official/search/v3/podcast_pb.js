@@ -1,0 +1,1 @@
+import{fileDesc,messageDesc}from"@bufbuild/protobuf/codegenv2";export const file_search_v3_podcast=fileDesc("ChdzZWFyY2gvdjMvcG9kY2FzdC5wcm90bxIJc2VhcmNoLnYzIk4KC1BvZGNhc3RNZXRhEg8KB3Byb2dyYW0YASABKAkSDgoGYXV0aG9yGAIgASgJEgsKA3BpZBgDIAEoCRIRCglhdWRpb191cmwYBCABKAliBnByb3RvMw");export const PodcastMetaSchema=messageDesc(file_search_v3_podcast,0);

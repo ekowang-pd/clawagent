@@ -1,0 +1,1 @@
+export const resolveObsEventFilePath=e=>e.log.wsObsFile;

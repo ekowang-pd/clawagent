@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.13",
+    "lastTouchedAt": "2026-03-15T11:35:05.618Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-13T08:35:27.350Z",
+    "lastRunVersion": "2026.2.13",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "logging": {
+    "file": "/root/.openclaw/logs/openclaw.log"
+  },
+  "browser": {
+    "executablePath": "/usr/bin/google-chrome",
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "openclaw"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "87feab2e4b7b6b70f5b957fa7986b38015a0f080958014de"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": []
+    },
+    "entries": {
+      "feishu": {
+        "enabled": true
+      },
+      "dingtalk-connector": {
+        "enabled": true
+      },
+      "weibo": {
+        "enabled": true
+      },
+      "wecom-openclaw-plugin": {
+        "enabled": true
+      },
+      "kimi-claw": {
+        "enabled": true,
+        "config": {
+          "log": {
+            "enabled": true
+          },
+          "bridge": {
+            "shell": {
+              "enabled": true
+            },
+            "promptTimeoutMs": 1800000
+          }
+        }
+      },
+      "kimi-search": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "feishu": {
+        "source": "npm",
+        "spec": "@m1heng-clawd/feishu",
+        "installPath": "/root/.openclaw/extensions/feishu",
+        "version": "0.1.16",
+        "installedAt": "2026-03-13T08:38:30.700Z"
+      },
+      "dingtalk-connector": {
+        "source": "npm",
+        "spec": "@dingtalk-real-ai/dingtalk-connector",
+        "installPath": "/root/.openclaw/extensions/dingtalk-connector",
+        "version": "0.7.6",
+        "installedAt": "2026-03-13T08:38:47.925Z"
+      },
+      "weibo": {
+        "source": "path",
+        "sourcePath": "/root/openclaw-weibo",
+        "installPath": "/root/.openclaw/extensions/weibo",
+        "version": "0.1.0",
+        "installedAt": "2026-03-13T08:38:57.156Z"
+      },
+      "wecom-openclaw-plugin": {
+        "source": "npm",
+        "spec": "@wecom/wecom-openclaw-plugin",
+        "installPath": "/root/.openclaw/extensions/wecom-openclaw-plugin",
+        "version": "1.0.11",
+        "installedAt": "2026-03-15T11:35:05.591Z"
+      }
+    }
+  }
+}
