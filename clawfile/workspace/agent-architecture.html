@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 架构详解</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 900px;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .architecture {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .layer-label {
+            width: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            text-align: right;
+        }
+        
+        .layer-content {
+            flex: 1;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .component {
+            flex: 1;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .component-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .component-desc {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        /* 输入层 - 绿色 */
+        .input-layer .component {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            color: white;
+        }
+        
+        /* 处理层 - 蓝色 */
+        .processing-layer .component {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        /* 执行层 - 橙色 */
+        .execution-layer .component {
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+            color: white;
+        }
+        
+        /* 输出层 - 紫色 */
+        .output-layer .component {
+            background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            color: white;
+        }
+        
+        .arrow {
+            text-align: center;
+            font-size: 24px;
+            color: #ccc;
+            margin: -10px 0;
+            margin-left: 120px;
+        }
+        
+        .loop-indicator {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 80px;
+            border: 3px dashed #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .legend {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">AI Agent 核心架构</h1>
+            <p class="subtitle">从输入到输出的智能闭环系统</p>
+        </div>
+        
+        <div class="architecture">
+            <!-- 输入层 -->
+            <div class="layer input-layer">
+                <div class="layer-label">输入层</div>
+                <div class="layer-content">
+                    <div class="component">
+                        <div class="component-title">👤 用户指令</div>
+                        <div class="component-desc">自然语言输入<br/>多模态数据</div>
+                    </div>
+                    <div class="component">
+                        <div class="component-title">🌐 环境感知</div>
+                        <div class="component-desc">系统状态<br/>外部信号</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">⬇️</div>
+            
+            <!-- 处理层 -->
+            <div class="layer processing-layer">
+                <div class="layer-label">处理层</div>
+                <div class="layer-content">
+                    <div class="component">
+                        <div class="component-title">🧠 LLM 大脑</div>
+                        <div class="component-desc">推理决策<br/>意图理解</div>
+                    </div>
+                    <div class="component">
+                        <div class="component-title">📋 Planning</div>
+                        <div class="component-desc">任务分解<br/>执行规划</div>
+                    </div>
+                    <div class="component">
+                        <div class="component-title">💾 Memory</div>
+                        <div class="component-desc">短期/长期<br/>上下文管理</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">⬇️</div>
+            
+            <!-- 执行层 -->
+            <div class="layer execution-layer">
+                <div class="layer-label">执行层</div>
+                <div class="layer-content">
+                    <div class="component">
+                        <div class="component-title">🔧 Tools</div>
+                        <div class="component-desc">API调用<br/>代码执行</div>
+                    </div>
+                    <div class="component">
+                        <div class="component-title">🔍 RAG</div>
+                        <div class="component-desc">知识检索<br/>外部搜索</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">⬇️</div>
+            
+            <!-- 输出层 -->
+            <div class="layer output-layer">
+                <div class="layer-label">输出层</div>
+                <div class="layer-content">
+                    <div class="component">
+                        <div class="component-title">📤 结果返回</div>
+                        <div class="component-desc">生成回复<br/>执行结果</div>
+                    </div>
+                    <div class="component">
+                        <div class="component-title">🔄 反馈循环</div>
+                        <div class="component-desc">状态更新<br/>记忆存储</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loop-indicator">
+            Agent<br/>Loop
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);"></div>
+                <span>输入层</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);"></div>
+                <span>处理层</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);"></div>
+                <span>执行层</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);"></div>
+                <span>输出层</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            AI Agent = LLM(大脑) + Tools(手脚) + Memory(记忆) + Planning(规划)
+        </div>
+    </div>
+</body>
+</html>

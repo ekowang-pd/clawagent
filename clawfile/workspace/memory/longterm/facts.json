@@ -1,0 +1,59 @@
+{
+  "facts": [
+    {
+      "id": "fact_20260318001",
+      "content": "用户名称是 Eko，职业是产品经理",
+      "category": "user",
+      "source": "raw/2026-03-18.md",
+      "confidence": 1.0,
+      "createdAt": "2026-03-18T09:00:00+08:00",
+      "updatedAt": "2026-03-18T09:00:00+08:00",
+      "accessCount": 1
+    },
+    {
+      "id": "fact_20260318002",
+      "content": "Eko 正在开发建材外贸Agent平台",
+      "category": "project",
+      "source": "raw/2026-03-18.md",
+      "confidence": 1.0,
+      "createdAt": "2026-03-18T09:00:00+08:00",
+      "updatedAt": "2026-03-18T09:00:00+08:00",
+      "accessCount": 1
+    },
+    {
+      "id": "fact_20260318003",
+      "content": "产品推荐数据源是公司自有产品库",
+      "category": "project",
+      "source": "raw/2026-03-18.md",
+      "confidence": 0.95,
+      "createdAt": "2026-03-18T14:00:00+08:00",
+      "updatedAt": "2026-03-18T14:00:00+08:00",
+      "accessCount": 1
+    },
+    {
+      "id": "fact_20260318004",
+      "content": "报价逻辑：标准品=标准价×(1+利润率)，非标品按类目公式计算",
+      "category": "project",
+      "source": "raw/2026-03-18.md",
+      "confidence": 0.95,
+      "createdAt": "2026-03-18T14:00:00+08:00",
+      "updatedAt": "2026-03-18T14:00:00+08:00",
+      "accessCount": 1
+    },
+    {
+      "id": "fact_20260318005",
+      "content": "后端已有 MCP 配置",
+      "category": "project",
+      "source": "raw/2026-03-18.md",
+      "confidence": 0.9,
+      "createdAt": "2026-03-18T14:00:00+08:00",
+      "updatedAt": "2026-03-18T14:00:00+08:00",
+      "accessCount": 1
+    }
+  ],
+  "_meta": {
+    "version": "1.0.0",
+    "count": 5,
+    "lastUpdated": "2026-03-18T18:35:00+08:00"
+  }
+}

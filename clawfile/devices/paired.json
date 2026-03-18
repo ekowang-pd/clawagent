@@ -2,10 +2,9 @@
   "2158068154faf6e3650d934ba4cda33be85b28c960f0e6faf508dc76aeaf46fc": {
     "deviceId": "2158068154faf6e3650d934ba4cda33be85b28c960f0e6faf508dc76aeaf46fc",
     "publicKey": "chHiHk5wP3cF_UmtRULiT3zogIK723hfxez0iJh-9xE",
-    "displayName": "agent",
     "platform": "linux",
-    "clientId": "gateway-client",
-    "clientMode": "backend",
+    "clientId": "cli",
+    "clientMode": "cli",
     "role": "operator",
     "roles": [
       "operator"
@@ -26,7 +25,7 @@
         ],
         "createdAtMs": 1773796518910,
         "rotatedAtMs": 1773825542782,
-        "lastUsedAtMs": 1773827505127
+        "lastUsedAtMs": 1773836970798
       }
     },
     "createdAtMs": 1773796518910,

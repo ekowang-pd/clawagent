@@ -1,0 +1,33 @@
+{
+  "preferences": [
+    {
+      "id": "pref_20260318001",
+      "content": "指令风格简洁直接，不需要过多解释",
+      "type": "communication",
+      "strength": "strong",
+      "createdAt": "2026-03-18T16:00:00+08:00",
+      "confirmedCount": 2
+    },
+    {
+      "id": "pref_20260318002",
+      "content": "执行原则：只按指令执行，不带其他意图",
+      "type": "work",
+      "strength": "strong",
+      "createdAt": "2026-03-18T16:00:00+08:00",
+      "confirmedCount": 1
+    },
+    {
+      "id": "pref_20260318003",
+      "content": "要求确认-执行-汇报三件事必须完整",
+      "type": "work",
+      "strength": "strong",
+      "createdAt": "2026-03-18T09:00:00+08:00",
+      "confirmedCount": 3
+    }
+  ],
+  "_meta": {
+    "version": "1.0.0",
+    "count": 3,
+    "lastUpdated": "2026-03-18T18:35:00+08:00"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-18T18:30:00+08:00",
+  "stats": {
+    "totalFacts": 0,
+    "totalDecisions": 0,
+    "totalPreferences": 0
+  },
+  "schema": {
+    "fact": {
+      "id": "string",
+      "content": "string",
+      "category": "user|project|world",
+      "source": "string",
+      "confidence": "number(0-1)",
+      "createdAt": "ISO8601",
+      "updatedAt": "ISO8601",
+      "accessCount": "number"
+    },
+    "decision": {
+      "id": "string",
+      "content": "string",
+      "context": "string",
+      "alternatives": ["string"],
+      "outcome": "string",
+      "createdAt": "ISO8601"
+    },
+    "preference": {
+      "id": "string",
+      "content": "string",
+      "type": "communication|work|content",
+      "strength": "strong|moderate|weak",
+      "createdAt": "ISO8601",
+      "confirmedCount": "number"
+    }
+  }
+}

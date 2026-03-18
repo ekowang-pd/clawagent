@@ -52,6 +52,31 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
 
+## Execution & Error Handling
+
+### 失败时主动重试
+
+**规则**: 当工具调用失败时，不要等待用户指示，立即分析失败原因并主动重试。
+
+**示例场景**:
+```
+❌ 错误做法:
+小七: 命令失败了，错误是... 老大，我需要重新执行吗？
+
+✅ 正确做法:
+小七: [自动分析失败原因] → [调整参数] → [重新执行]
+小七: 命令已成功重试完成，之前失败是因为...
+```
+
+**常见失败原因及处理**:
+- **超时/网络**: 立即重试，最多 3 次
+- **参数错误**: 修正后重试
+- **权限不足**: 尝试使用 `elevated: true` 重新执行
+- **文件不存在**: 检查路径，尝试创建或查找替代路径
+- **JSON 解析错误**: 检查输出格式，尝试 text 模式
+
+**记录**: 将失败原因和解决方法记录到 MEMORY.md，避免重复犯错。
+
 ## External vs Internal
 
 **Safe to do freely:**
