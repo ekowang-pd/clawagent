@@ -1,5 +1,44 @@
 {
-  "version": "1.0.0",
-  "tags": {},
-  "tagRelations": {}
+  "tags": {
+    "用户": {
+      "count": 4,
+      "entries": ["F001", "F002", "P001"]
+    },
+    "项目": {
+      "count": 5,
+      "entries": ["F003", "F004", "F005", "F006", "F007"]
+    },
+    "小七": {
+      "count": 2,
+      "entries": ["F008", "F009"]
+    },
+    "工具": {
+      "count": 1,
+      "entries": ["F010"]
+    },
+    "技术": {
+      "count": 1,
+      "entries": ["F011"]
+    },
+    "决策": {
+      "count": 3,
+      "entries": ["D001", "D002", "D003"]
+    },
+    "偏好": {
+      "count": 3,
+      "entries": ["P001", "P002", "P003"]
+    },
+    "沟通": {
+      "count": 1,
+      "entries": ["P001"]
+    },
+    "执行": {
+      "count": 1,
+      "entries": ["P002"]
+    },
+    "工作流": {
+      "count": 1,
+      "entries": ["P003"]
+    }
+  }
 }
