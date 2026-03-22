@@ -1,0 +1,9 @@
+{
+  "tags": {
+    "user": {"count": 1, "files": ["longterm/facts.json"]},
+    "project": {"count": 4, "files": ["longterm/facts.json"]},
+    "communication": {"count": 1, "files": ["longterm/preferences.json"]},
+    "work": {"count": 2, "files": ["longterm/preferences.json"]}
+  },
+  "lastUpdated": "2026-03-22T02:00:00+08:00"
+}
